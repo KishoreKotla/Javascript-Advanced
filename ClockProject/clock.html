@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            background-size: cover;
+            font-family: arial;
+        }
+        
+    </style>
+    <script>
+        function LoadTime(){
+            var now = new Date();
+            var time = now.toLocaleTimeString();
+            document.querySelector("h1").innerHTML = time;
+        }
+        function bodyload(){
+            setInterval(LoadTime,1000);
+            var now = new Date();
+            var hrs = now.getHours();
+            var p = document.querySelector("p");
+
+            if(hrs>=0 && hrs<=12) {
+                p.innerHTML = "Good Morning Kishore Naidu !!";
+                
+            } else if(hrs>12 && hrs<=17) {
+                p.innerHTML = "Good Afternoon Kishore Naidu !";
+                
+            } else if(hrs>17 && hrs<=23) {
+                p.innerHTML = "Good Evening Kishore Naidu!";
+               
+            }
+
+        }
+    </script>
+</head>
+<body onload="bodyload()" >
+    <h1 align="center"></h1>
+    <p align="center"></p>
+</body>
+</html>

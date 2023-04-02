@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        div{
+            height: 300px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+    <script>
+        function bodyload(){
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            let AMPM = "";
+            let p = document.querySelector("p");
+
+            if(h<12){
+                p.innerHTML = "Good Morning !";
+            }
+            else if(h>=12 && h<=18){
+                p.innerHTML = "Good Afternoon !";
+            }
+            else if(h>18 && h<23){
+                p.innerHTML = "Have a sweet sleep !";
+            }
+
+            if(h<12){
+                AMPM = "AM";
+            }
+            else if(h>=12){
+                AMPM = "PM";
+            }
+
+
+            
+
+
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+
+            document.querySelector("h2").innerHTML = h + ":" + m + ":" + s + " " + AMPM;
+        }
+        setInterval(bodyload,1000);
+    </script>
+    
+</head>
+<body onload="bodyload()">
+    <div>
+        <h2 align="center"></h2>
+        <p align="center"></p>
+    </div>
+</body>
+</html>
