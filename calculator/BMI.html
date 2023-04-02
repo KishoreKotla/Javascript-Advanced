@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        header{
+            font-size: 40px;
+            background-color: rgb(0, 60, 255);
+            color:white;
+            text-align: center;
+        }
+        #col-1{
+            border: 3px solid black;
+            padding: 10px;
+            margin-right: 5px;
+        }
+        #col-2{
+            border: 3px solid black;
+            padding: 10px;
+        }
+        .result{
+            background-color:white;
+            height: 50px;
+        }
+    </style>
+    <script>
+        function CalculateClick(){
+            var age = document.getElementById("age").value;
+            var height = document.getElementById("height").value;
+            var weight = document.getElementById("weight").value;
+            var bmi = weight/(math.pow(height,2));
+            document.getElementById("result").innerHTML = ` your bmi is ${bmi}`;
+        }
+        function clearClick(){
+            document.getElementById("age").innerHTML = "";
+            document.getElementById("height").innerHTML = "";
+            document.getElementById("weight").innerHTML = "";
+        }
+    </script>
+</head>
+<body class="container-fluid mt-4"  >
+    <header>Body Mass Calculator</header>
+    <section class="ms-4 mt-4">
+        
+        <div class="row">
+            <div class="col" id="col-1">
+                <div>
+                    <label>Age </label> <input type="text" placeholder="age" id="age"> <label> ages: 2 - 120</label>
+                </div>
+                <div class="mt-2">
+                    <label>Gender</label> <input type="radio"> Male <input type="radio"> Female
+                </div>
+                <div class="mt-2">
+                     <label>Height</label> <input type="text" placeholder="cm" id="height">
+                </div>
+                <div class="mt-2">
+                    <label>Weight</label> <input type="text" placeholder="kg" id="weight">
+                </div>
+                <div class="mt-4">
+                    <button class="btn btn-success" onclick="CalculateClick()">Calculate <span class="bi bi-play-circle"></span></button>
+                    <button class="btn btn-info" onclick="clearClick()">Clear <span class="bi bi-trash"></span></button>
+                </div>
+            </div>
+            <div class="col" id="col-2">
+                <div id="result">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
